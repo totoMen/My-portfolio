@@ -1,0 +1,265 @@
+@use '_reset';  @import'_mixins.scss';
+
+// VARIABLES
+:root {
+
+    /* VARIABLES COLORES */
+
+    --color-secundaryelements: #A0AEC0;
+    --color-principaltexts: #fff;
+    --button-color: #9309c9;
+
+}
+
+//CONTENEDOR DE PROPIEDADES
+.wrapper {
+    max-width: 60%;
+    margin: auto;
+}
+
+// HEADER - NAVBAR
+.header {
+
+    .nav {
+        position: fixed;
+        width: 100%;
+        background-color: #171923;
+        text-align: center;
+        padding: 1em 0;
+
+        &__ul {
+            @include flex( row , nowrap , center , center );
+            margin: 0 1em;
+            font-size: 16px;
+            color: #fff;
+        }               
+        &__logo {
+            color: var(--color-principaltexts);
+            font-size: 25px;
+            margin: 0 .7rem;
+            font-weight: 700;
+        }
+        &__links {
+            margin: 0 1rem;
+            color: var(--color-principaltexts);
+        }
+        &__button {
+            color: #fff;
+            padding: .7em;
+            border-radius: .7em;
+            margin: 0 .7rem;
+            background-color: var(--button-color);
+            cursor: pointer;
+            font-size: 15px;
+            
+            @include mv() {
+                display: none;
+            }
+        }
+        &__a--button {
+            color: var(--color-principaltexts);
+        }
+    } 
+}   
+
+// SECTION PRINCIPAL
+.hero {
+    height: 105vh;
+    @include flex( column , nowrap , center , center );
+    
+    &__main {
+        text-align: center;
+        @include flex( column , nowrap , center , center );
+    }
+    &__ppal {
+        @include flex( column , nowrap , center , center );
+    }
+    &__img {
+        width: 270px;
+        height: 270px;
+        border: 5px solid #2D3748;
+        border-radius: 50%;
+
+        @include mv() {
+            width: 250px;
+            height: 250px;
+        }
+    }
+    &__h2{
+        font-weight: 700;
+        font-size: 20px;
+        padding-top: .7em;
+        color: var(--color-principaltexts);
+    }
+    &__h3{
+        font-weight: 400;
+        padding-top: .4em;
+        color: var(--color-secundaryelements);
+    }
+    &__ul {
+        @include flex ( row , nowrap , center , center )
+    }
+    &__iconos {
+        color: var(--color-secundaryelements);
+        padding: .4em .2em;
+        font-size: 28px;
+    }
+    &__iconos:hover {
+        color: var(--color-principaltexts);
+        transition: .5s;
+    }
+
+}
+
+// SECTION ABOUT - PRESENTACION 
+.about {
+    height: 60vh;
+    margin: auto;
+    @include flex( row , nowrap , center , center );
+    gap: 2em;
+
+    &__h1 {
+        padding: 1rem 0;
+        font-size: 18px;
+        color: var(--color-principaltexts);
+    }
+    &__p {
+        color: var(--color-secundaryelements);
+    }
+    &__h1--skills {
+        padding: .8rem 0;
+        font-size: 18px;
+        color: var(--color-principaltexts);
+    }
+    &__logos--skills {
+        @include flex ( row , nowrap , flex-start , center);
+    }
+    &__img--skills {
+        width: 60px;
+        height: 60px;
+        margin-right: .7em;
+
+        @include mv() {
+            width: 45px;
+            height: 45px;
+        }    
+    }
+    &__figure {
+        @include flex ( row , nowrap , center , center);
+    }
+    &__img {
+        width: 250px;
+        height: 250px;
+
+        @include mv() {
+            display: none;
+        }
+    }
+}    
+
+// SECTION MY PROJECTS - PROYECTOS
+.myprojects {
+    min-height: 65vh;
+    margin: auto;
+
+    &__h1 {
+        padding-bottom: 2em;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+    }
+    &__main {
+        @include flex ( row , nowrap , space-between , center); 
+    }
+    &__ppal {
+        @include mv() {
+            flex-direction: column;
+        }
+    }
+    &__cards--container {
+        background-color: #2D3748;
+        border-radius: 1em;
+
+        @include mv() {
+            margin: 1.4rem;
+        }
+    } 
+    &__cards--content {
+        width: 230px;
+        height: 230px;
+        text-align: center;
+        padding: 1em;
+    }
+    &__h3 {
+        color: var(--color-principaltexts);
+        padding-top: 3em;
+    }
+    &__p1 {
+        color: var(--color-secundaryelements);
+    }
+    &__ul {
+        @include flex(row , nowrap , center, center);
+    }
+    &__iconos{
+        color: var(--color-secundaryelements);
+        font-size: 20px;
+        padding: .3em;
+    }
+    &__contenedor--button {
+        padding-top: 1em;
+        text-align: center;
+        @include flex ( row , nowrap , center , center);
+
+        @include mv() {
+            padding: 1.5em;
+        }
+    }
+    &__button {
+        padding: .7em;
+        border-radius: .7em;
+        background-color: var(--button-color);
+        cursor: pointer;
+        color: var(--color-principaltexts);
+        font-size: 15px;
+    }
+}
+
+// SECTION FOOTER 
+.footer {
+    width: 75%;
+    margin: auto;
+    padding-bottom: 1rem;
+
+    &__main {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    &__p {
+        color: var(--color-principaltexts);
+        padding: .65em;
+    }
+    &__ul {
+        @include flex( row , nowrap , center , center )
+    }
+    &__li {
+        gap: 1rem;
+    }
+    &__iconos {
+        font-size: 25px;
+        color: var(--color-secundaryelements);
+        margin: 0 .2em 0 .2em;
+    }
+    &__iconos:hover {
+        color: var(--color-principaltexts);
+        transition: .5s;
+    }
+    &__button {
+        display: none;
+
+        @include mv() {
+            padding: .5rem;
+            border-radius: 30px;
+            margin: 0 0 0 2em;
+        }
+    }
+}

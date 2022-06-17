@@ -167,13 +167,40 @@ body {
   max-width: 60%;
   margin: auto;
 }
+@media (max-width: 700px) {
+  .wrapper {
+    max-width: 80%;
+  }
+}
 
+@media (max-width: 700px) {
+  .header {
+    max-width: 80%;
+  }
+}
 .header .nav {
   position: fixed;
   width: 100%;
   background-color: #171923;
   text-align: center;
   padding: 1em 0;
+}
+@media (max-width: 700px) {
+  .header .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 .header .nav__ul {
   display: -webkit-box;
@@ -203,12 +230,17 @@ body {
   margin: 0 1rem;
   color: var(--color-principaltexts);
 }
+@media (max-width: 700px) {
+  .header .nav__links {
+    display: none;
+  }
+}
 .header .nav__button {
   color: #fff;
   padding: 0.7em;
   border-radius: 0.7em;
   margin: 0 0.7rem;
-  background-color: var(--button-color);
+  background-color: #63B3ED;
   cursor: pointer;
   font-size: 15px;
 }
@@ -327,21 +359,71 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2em;
+}
+@media (max-width: 700px) {
+  .about {
+    min-height: 70vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
 }
 .about__h1 {
   padding: 1rem 0;
   font-size: 18px;
   color: var(--color-principaltexts);
 }
+@media (max-width: 700px) {
+  .about__h1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
 .about__p {
   color: var(--color-secundaryelements);
+  width: 90%;
+}
+@media (max-width: 700px) {
+  .about__p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    width: 100%;
+  }
 }
 .about__h1--skills {
   padding: 0.8rem 0;
@@ -390,8 +472,8 @@ body {
           align-items: center;
 }
 .about__img {
-  width: 250px;
-  height: 250px;
+  width: 270px;
+  height: 230px;
 }
 @media (max-width: 700px) {
   .about__img {
@@ -399,17 +481,22 @@ body {
   }
 }
 
-.myprojects {
-  min-height: 65vh;
+.myexperience {
+  min-height: 60vh;
   margin: auto;
 }
-.myprojects__h1 {
+@media (max-width: 700px) {
+  .myexperience {
+    min-height: 75vh;
+  }
+}
+.myexperience__h1 {
   padding-bottom: 2em;
   text-align: center;
   color: #fff;
   font-size: 18px;
 }
-.myprojects__main {
+.myexperience__main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,36 +512,44 @@ body {
           align-items: center;
 }
 @media (max-width: 700px) {
-  .myprojects__ppal {
+  .myexperience__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
   }
 }
-.myprojects__cards--container {
+.myexperience__cards--container {
   background-color: #2D3748;
   border-radius: 1em;
 }
 @media (max-width: 700px) {
-  .myprojects__cards--container {
+  .myexperience__cards--container {
     margin: 1.4rem;
   }
 }
-.myprojects__cards--content {
+.myexperience__cards--content {
   width: 230px;
-  height: 230px;
+  height: 200px;
   text-align: center;
   padding: 1em;
 }
-.myprojects__h3 {
+.myexperience__h3 {
   color: var(--color-principaltexts);
   padding-top: 3em;
 }
-.myprojects__p1 {
+.myexperience__p1 {
   color: var(--color-secundaryelements);
 }
-.myprojects__ul {
+.myexperience__ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -469,12 +564,12 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
-.myprojects__iconos {
+.myexperience__iconos {
   color: var(--color-secundaryelements);
   font-size: 20px;
   padding: 0.3em;
 }
-.myprojects__contenedor--button {
+.myexperience__contenedor--button {
   padding-top: 1em;
   text-align: center;
   display: -webkit-box;
@@ -492,14 +587,15 @@ body {
           align-items: center;
 }
 @media (max-width: 700px) {
-  .myprojects__contenedor--button {
-    padding: 1.5em;
+  .myexperience__contenedor--button {
+    padding-top: 0.5em;
+    margin-bottom: 2em;
   }
 }
-.myprojects__button {
+.myexperience__button {
   padding: 0.7em;
   border-radius: 0.7em;
-  background-color: var(--button-color);
+  background-color: #63B3ED;
   cursor: pointer;
   color: var(--color-principaltexts);
   font-size: 15px;
@@ -517,6 +613,9 @@ body {
 .footer__p {
   color: var(--color-principaltexts);
   padding: 0.65em;
+}
+.footer__corazon {
+  color: #63B3ED;
 }
 .footer__ul {
   display: -webkit-box;

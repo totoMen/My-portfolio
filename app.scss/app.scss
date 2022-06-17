@@ -15,10 +15,19 @@
 .wrapper {
     max-width: 60%;
     margin: auto;
+
+    @include mv() {
+        max-width: 80%;
+    }
 }
 
 // HEADER - NAVBAR
 .header {
+
+    
+    @include mv() {
+        max-width: 80%;       
+    }
 
     .nav {
         position: fixed;
@@ -26,6 +35,10 @@
         background-color: #171923;
         text-align: center;
         padding: 1em 0;
+
+        @include mv() {
+            @include flex( row , nowrap , space-between , center );
+        }
 
         &__ul {
             @include flex( row , nowrap , center , center );
@@ -37,21 +50,24 @@
             color: var(--color-principaltexts);
             font-size: 25px;
             margin: 0 .7rem;
-            font-weight: 700;
+            font-weight: 700;   
         }
         &__links {
             margin: 0 1rem;
             color: var(--color-principaltexts);
+            @include mv() {
+                display: none;       
+            }
         }
         &__button {
             color: #fff;
             padding: .7em;
             border-radius: .7em;
             margin: 0 .7rem;
-            background-color: var(--button-color);
+            background-color: #63B3ED;
             cursor: pointer;
             font-size: 15px;
-            
+
             @include mv() {
                 display: none;
             }
@@ -115,16 +131,30 @@
 .about {
     height: 60vh;
     margin: auto;
-    @include flex( row , nowrap , center , center );
-    gap: 2em;
+    @include flex( row , nowrap , space-between , center );
+
+    @include mv() {
+        min-height: 70vh;
+        @include flex( column , wrap , center , center );
+    }
 
     &__h1 {
         padding: 1rem 0;
         font-size: 18px;
         color: var(--color-principaltexts);
+
+        @include mv() {
+            @include flex( column , wrap , center , center );
+        }
     }
     &__p {
         color: var(--color-secundaryelements);
+        width: 90%;
+
+        @include mv() {
+            @include flex( column , wrap , center , center );
+            width: 100%;
+        }
     }
     &__h1--skills {
         padding: .8rem 0;
@@ -148,8 +178,8 @@
         @include flex ( row , nowrap , center , center);
     }
     &__img {
-        width: 250px;
-        height: 250px;
+        width: 270px;
+        height: 230px;
 
         @include mv() {
             display: none;
@@ -157,10 +187,14 @@
     }
 }    
 
-// SECTION MY PROJECTS - PROYECTOS
-.myprojects {
-    min-height: 65vh;
+// SECTION MY experiencies - PROYECTOS
+.myexperience {
+    min-height: 60vh;
     margin: auto;
+
+    @include mv() {
+        min-height: 75vh;
+    }
 
     &__h1 {
         padding-bottom: 2em;
@@ -170,10 +204,8 @@
     }
     &__main {
         @include flex ( row , nowrap , space-between , center); 
-    }
-    &__ppal {
         @include mv() {
-            flex-direction: column;
+            @include flex ( column , wrap , space-between , center);
         }
     }
     &__cards--container {
@@ -186,7 +218,7 @@
     } 
     &__cards--content {
         width: 230px;
-        height: 230px;
+        height: 200px;
         text-align: center;
         padding: 1em;
     }
@@ -211,13 +243,14 @@
         @include flex ( row , nowrap , center , center);
 
         @include mv() {
-            padding: 1.5em;
+            padding-top: .5em;
+            margin-bottom: 2em;
         }
     }
     &__button {
         padding: .7em;
         border-radius: .7em;
-        background-color: var(--button-color);
+        background-color: #63B3ED;
         cursor: pointer;
         color: var(--color-principaltexts);
         font-size: 15px;
@@ -237,6 +270,9 @@
     &__p {
         color: var(--color-principaltexts);
         padding: .65em;
+    }
+    &__corazon {
+        color: #63B3ED;
     }
     &__ul {
         @include flex( row , nowrap , center , center )
